@@ -32,7 +32,7 @@ export default {
   name: "mainTabBar",
   data() {
     return {
-      activeColor: "blue"
+      activeColor: "deepPink"
     };
   },
   components: {
