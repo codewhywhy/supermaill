@@ -1,11 +1,13 @@
 <template>
-  <swiper ref="swiper" v-if="banners.length">
-    <swiper-item v-for="(item, index) in banners">
-      <a :href="item.link">
-        <img :src="item.image" alt />
-      </a>
-    </swiper-item>
-  </swiper>
+  <div class="homeSwiper">
+    <swiper v-if="banners.length">
+      <swiper-item v-for="(item, index) in banners">
+        <!-- <a :href="item.link"> -->
+        <img :src="item.image" alt @load="imgLoad" />
+        <!-- </a> -->
+      </swiper-item>
+    </swiper>
+  </div>
 </template>
 
 <script>
@@ -28,7 +30,11 @@ export default {
     Swiper,
     SwiperItem
   },
-  methods: {}
+  methods: {
+    imgLoad() {
+      this.$emit("homeSwiperImgLoad");
+    }
+  }
 };
 </script>
 
